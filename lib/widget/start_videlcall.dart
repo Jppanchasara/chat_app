@@ -1,7 +1,6 @@
-// ignore_for_file: prefer_const_constructors
-
-import 'package:chat_app/app/modules/chat_all_participants/views/chat_all_participants_view.dart';
-import 'package:chat_app/app/modules/chat_my_mentor/views/chat_my_mentor_view.dart';
+import 'package:chat_app/app/modules/video_call_screen.dart/bindings/video_call_screen_dart_binding.dart';
+import 'package:chat_app/app/modules/video_call_screen.dart/views/video_call_screen_dart_view.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -10,9 +9,9 @@ import 'package:get/get_core/src/get_main.dart';
 
 import 'card_widget.dart';
 
-class StartChatWidget extends StatelessWidget {
+class StartVideoCall extends StatelessWidget {
   final String title;
-  const StartChatWidget({super.key, required this.title});
+  const StartVideoCall({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +27,10 @@ class StartChatWidget extends StatelessWidget {
         ),
         cardwidget(
           ontap_mymentor: () {
-            Get.to(ChatMyMentorView());
+            Get.to(VideoCallScreenDartView());
           },
           ontap_all: () {
-            Get.to(ChatAllParticipantsView());
+            Get.to(VideoCallScreenDartView());
           },
           icon: Icons.person,
           title: "Practice Maths",
@@ -39,12 +38,8 @@ class StartChatWidget extends StatelessWidget {
           like: "5",
         ),
         cardwidget(
-          ontap_mymentor: () {
-            Get.to(ChatMyMentorView());
-          },
-          ontap_all: () {
-            Get.to(ChatAllParticipantsView());
-          },
+          ontap_mymentor: () {},
+          ontap_all: () {},
           icon: Icons.person,
           title: "Breathing",
           subtitle: "Mentor -Tanvi",

@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:chat_app/widget/start_chat.dart';
+import 'package:chat_app/widget/start_videlcall.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -116,7 +117,7 @@ class ConnectView extends GetView<ConnectController> {
                             style: TextStyle(
                                 color: Colors.red,
                                 fontSize: 16,
-                                fontWeight: FontWeight.w500),
+                                fontWeight: FontWeight.w600),
                           )
                         ],
                       ),
@@ -139,7 +140,7 @@ class ConnectView extends GetView<ConnectController> {
       StartChatWidget(
         title: "Start a chat with",
       ),
-      StartChatWidget(
+      StartVideoCall(
         title: "Start vide call with",
       )
     ];
@@ -203,8 +204,8 @@ class ConnectView extends GetView<ConnectController> {
                                   controller.changebuttonvalue(0);
                                 },
                                 child: Container(
-                                  padding: EdgeInsets.symmetric(
-                                      vertical: 12, horizontal: 15),
+                                  height: 45,
+                                  width: Get.width / 2.35,
                                   decoration: BoxDecoration(
                                       color: controller.buttonIndex.value == 0
                                           ? Colors.white
@@ -213,12 +214,18 @@ class ConnectView extends GetView<ConnectController> {
                                   child: Padding(
                                     padding: const EdgeInsets.symmetric(
                                         horizontal: 25),
-                                    child: Text(
-                                      "UpComing",
-                                      style: TextStyle(
-                                          color: Colors.black38,
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500),
+                                    child: Center(
+                                      child: Text(
+                                        "Chat",
+                                        style: TextStyle(
+                                            color:
+                                                controller.buttonIndex.value ==
+                                                        0
+                                                    ? Colors.black
+                                                    : Colors.black38,
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w500),
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -228,22 +235,28 @@ class ConnectView extends GetView<ConnectController> {
                                   controller.changebuttonvalue(1);
                                 },
                                 child: Container(
-                                  padding: EdgeInsets.symmetric(
-                                      vertical: 12, horizontal: 15),
+                                  height: 45,
+                                  width: Get.width / 2.35,
                                   decoration: BoxDecoration(
                                       color: controller.buttonIndex.value == 1
                                           ? Colors.white
                                           : Colors.transparent,
                                       borderRadius: BorderRadius.circular(10)),
-                                  child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 25),
-                                    child: Text(
-                                      "UpComing",
-                                      style: TextStyle(
-                                          color: Colors.black38,
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500),
+                                  child: Center(
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 25),
+                                      child: Text(
+                                        "Video call",
+                                        style: TextStyle(
+                                            color:
+                                                controller.buttonIndex.value ==
+                                                        1
+                                                    ? Colors.black
+                                                    : Colors.black38,
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w500),
+                                      ),
                                     ),
                                   ),
                                 ),

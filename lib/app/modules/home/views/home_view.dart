@@ -11,11 +11,11 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     var page = [
-      Text("page"),
-      Text("page 0.5"),
-      Text("page 1"),
+      Center(child: Text("Golas")),
+      Center(child: Text("jaurney")),
+      Center(child: Text("Add")),
       ConnectView(),
-      Text("page 3")
+      Center(child: Text("Performance"))
     ];
     return Scaffold(
         resizeToAvoidBottomInset: false,
